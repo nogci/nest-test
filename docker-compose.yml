@@ -1,0 +1,40 @@
+version: '3.7'
+services:
+  api-server:
+    build: .
+    tty: true
+    restart: always
+    ports:
+      - '3000:3000'
+    volumes:
+      - type: bind
+        source: .
+        target: /api-server
+    depends_on:
+      - db-server
+  db-server:
+    container_name: db-server
+    image: mysql:5.7.29
+    restart: always
+    ports:
+      - '3306:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: develop
+      MYSQL_USER: develop
+      MYSQL_PASSWORD: password
+
+
+
+#     networks:
+#       - container-link
+
+# networks:
+#   # docker-composeで勝手にデフォルトネットワークが生成される予防。（自動で全コンテナが所属するbridgeを指定）
+#   default:
+#     external:
+#       name: bridge
+#   # コンテナ間通信用のネットワークセグメント
+#   container-link:
+#     # これが作成されるネットワーク名（同名がなければ自動生成される）
+#     name: shared-nw
