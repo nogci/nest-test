@@ -7,9 +7,9 @@ module.exports = {
   "database": "test",
   "synchronize": false,
   "logging": false,
-  "entities": ["dist/src/entities/**/*.entity.ts"],
-  "migrations": ["dist/src/db/migrations/**/*.ts"],
-  "subscribers": ["src/db/subscribers/**/*.ts"],
+  "entities": ["dist/entities/**/*.entity.{ts,js}"],
+  "migrations": ["dist/db/migrations/**/*.{ts,js}"],
+  "subscribers": ["dist/db/subscribers/**/*.{ts,js}"],
   "cli": {
       "entitiesDir": "src/entities",
       "migrationsDir": "src/db/migrations",

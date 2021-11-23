@@ -10,4 +10,10 @@ export class User extends BaseEntity {
 
   @Column('text')
   description: string;
+
+  constructor(name: string, description: string) {
+    super();
+    this.name = name;
+    this.description = description;
+  }
 }

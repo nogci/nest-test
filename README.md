@@ -49,6 +49,7 @@ yarn run typeorm migration:generate -n Initialize
 //mig run
 yarn run typeorm migration:run
 
+yarn run typeorm migration:generate -n addSeqTable
 
 ```
 
