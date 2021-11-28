@@ -4,8 +4,8 @@ import { UpdateUserDto } from './dto/update-user.dto';
 import { User } from '../entities/user.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { ReceptionWork } from 'src/entities/reception-work.entity';
-import { Reception } from 'src/entities/reception.entity';
+import { ReceptionWork } from '../entities/reception-work.entity';
+import { Reception } from '../entities/reception.entity';
 
 @Injectable()
 export class UserService {
@@ -32,8 +32,10 @@ export class UserService {
     return ret.identifiers[0].id;
   }
 
-  findAll(): Promise<User[]> {
-    return this.usersRepository.find();
+  findAll(): Promise<Reception[]> {
+    // return this.usersRepository.find();
+    return this.receptionRepository.find();
+
   }
 
   findOne(id: number) {
