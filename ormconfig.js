@@ -6,7 +6,7 @@ module.exports = {
   "password": "root",
   "database": "test",
   "synchronize": false,
-  "logging": false,
+  "logging": true,
   "entities": ["dist/entities/**/*.entity.{ts,js}"],
   "migrations": ["dist/db/migrations/**/*.{ts,js}"],
   "subscribers": ["dist/db/subscribers/**/*.{ts,js}"],
